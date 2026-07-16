@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+#NOTE: Re-running this creates a duplicate app registration. Check az ad app list first
+
 GH_ORG="ja-me-ry"
 GH_OWNER_ID="192547426"
 GH_REPO="sift"
