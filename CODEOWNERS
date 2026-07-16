@@ -1,0 +1,7 @@
+# Default owner for everything in the repo
+* @ja-me-ry
+
+# Infra and pipeline changes require the same review — but this is where
+# you'd split ownership on a real team (e.g. a platform team owning /.github and /infra)
+/.github/ @ja-me-ry
+/infra/ @ja-me-ry
