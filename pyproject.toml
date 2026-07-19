@@ -8,3 +8,4 @@ ignore = ["S101"]  # allow assert in tests
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["."]
