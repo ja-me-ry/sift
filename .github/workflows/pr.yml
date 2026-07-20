@@ -122,10 +122,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # gitleaks needs full history, not just the latest commit
-
       - name: Run gitleaks
-        uses: gitleaks/gitleaks-action@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # No GITLEAKS_LICENSE needed — this repo is under a personal account,
-          # not an organization, so the free tier applies with no extra setup.
+        uses: docker://zricethezav/gitleaks:latest
+        with:
+          args: detect --source . --verbose --exit-code 1
+        # Runs gitleaks directly via its own image — no GitHub API calls,
+        # no account-type lookup, so it can't fail the way gitleaks-action did.
+        # Trade-off: no automatic PR comments on findings.
